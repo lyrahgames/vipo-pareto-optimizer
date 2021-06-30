@@ -1,0 +1,28 @@
+libs =
+import libs += lyrahgames-pareto%lib{lyrahgames-pareto}
+
+./: exe{kursawe-optimizer}: obj{kursawe-optimizer}
+obj{kursawe-optimizer}: cxx{pareto_optimizer} $libs
+{
+  cxx.poptions += "-DPARETO_PROBLEM=pareto::gallery::kursawe<real>"
+}
+
+./: exe{zdt3-optimizer}: obj{zdt3-optimizer}
+obj{zdt3-optimizer}: cxx{pareto_optimizer} $libs
+{
+  cxx.poptions += "-DPARETO_PROBLEM=pareto::gallery::zdt3<real>"
+}
+
+./: exe{viennet-optimizer}: obj{viennet-optimizer}
+obj{viennet-optimizer}: cxx{pareto_optimizer} $libs
+{
+  cxx.poptions += "-DPARETO_PROBLEM=pareto::gallery::viennet<real>"
+}
+
+./: exe{pawellek-optimizer}: obj{pawellek-optimizer}
+obj{pawellek-optimizer}: cxx{pareto_optimizer} $libs
+{
+  cxx.poptions += "-DPARETO_PROBLEM=pareto::gallery::pawellek<real>"
+}
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"

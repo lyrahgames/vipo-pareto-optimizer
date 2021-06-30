@@ -1,0 +1,14 @@
+: 1
+name: pareto-optimizer
+version: 0.1.0-a.0.z
+summary: pareto-optimizer C++ executable
+license: other: proprietary ; Not free/open source.
+
+description-file: README.md
+# url: https://example.org/pareto-optimizer
+email: lyrahgames@mailbox.org
+
+depends: * build2 >= 0.13.0
+depends: * bpkg >= 0.13.0
+
+depends: lyrahgames-pareto == 0.1.0
