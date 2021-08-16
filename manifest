@@ -1,6 +1,6 @@
 : 1
 name: vipo-pareto-optimizer
-version: 0.1.0
+version: 0.1.1-a.0.z
 project: vipo
 summary: Executables based on a Chosen Set of Multi-Objective Optimization Problems for the Estimation of Pareto Frontiers
 license: GPL-3.0-or-later
