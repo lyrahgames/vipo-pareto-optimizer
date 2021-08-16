@@ -1,4 +1,4 @@
-project = pareto-optimizer
+project = vipo-pareto-optimizer
 
 using version
 using config

@@ -1,11 +1,12 @@
 : 1
-name: pareto-optimizer
+name: vipo-pareto-optimizer
 version: 0.1.0-a.0.z
-summary: pareto-optimizer C++ executable
-license: other: proprietary ; Not free/open source.
+project: vipo
+summary: Executables based on a Chosen Set of Multi-Objective Optimization Problems for the Estimation of Pareto Frontiers
+license: GPL-3.0-or-later
 
 description-file: README.md
-# url: https://example.org/pareto-optimizer
+url: https://github.com/lyrahgames/vipo-pareto-optimizer
 email: lyrahgames@mailbox.org
 
 depends: * build2 >= 0.13.0
