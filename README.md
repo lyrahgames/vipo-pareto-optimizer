@@ -67,25 +67,59 @@
         <td>C++20</td>
     </tr>
     <tr>
+        <td>Operating System:</td>
+        <td>Linux</td>
+    </tr>
+    <tr>
+        <td>Compiler:</td>
+        <td>GCC 10 | GCC 11</td>
+    </tr>
+    <tr>
         <td>Build System:</td>
         <td>
             <a href="https://build2.org/">build2</a>
         </td>
     </tr>
     <tr>
-        <td>Operating System:</td>
-        <td>Linux | Windows | MacOS</td>
-    </tr>
-    <tr>
         <td>Dependencies:</td>
         <td>
-            lyrahgames-pareto ^ 0.1.3
+            <a href="https://github.com/lyrahgames/pareto">
+                lyrahgames-pareto ^ 0.1.3
+            </a>
         </td>
     </tr>
 </table>
 </b>
 
 ## Build
+First, clone the repository and change into its directory.
+
+    git clone https://github.com/lyrahgames/vipo-pareto-optimizer.git
+    cd vipo-pareto-optimizer
+
+### Linux
+Add a new build2 configuration for GCC.
+
+    bdep init -C ../.build-gcc @gcc cc config.cxx=g++ config.cxx.coptions="-O3 -march=native"
+
+Build the executables for the created configuration.
+
+    bdep update @gcc
+
+The executables can then be found by looking inside the configuration folder.
+
+### Cross-Compile on Linux for Windows
+Make sure to install [Mingw-w64](https://www.mingw-w64.net) on your system and initialize a configuration with the appropriate parameters.
+
+    bdep init -C ../.build-mingw @mingw cc \
+        config.cxx=x86_64-w64-mingw32-g++ \
+        config.cxx.poptions="-DNDEBUG -D_USE_MATH_DEFINES" \
+        config.cxx.coptions="-O3" \
+        config.cxx.loptions="-fPIC -static -static-libgcc -static-libstdc++"
+
+Update the created configuration and put the executables that can be found inside the configuration folder on a Windows computer.
+
+    bdep update @mingw
 
 ## Usage
 
