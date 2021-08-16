@@ -61,7 +61,7 @@
 
 ## Requirements
 <b>
-<table>
+<table align="center">
     <tr>
         <td>Language Standard:</td>
         <td>C++20</td>
@@ -122,6 +122,15 @@ Update the created configuration and put the executables that can be found insid
     bdep update @mingw
 
 ## Usage
+Every optimizer has to be called with a file path as an argument as follows.
+
+    ./OPTIMIZER <output file path>
+
+The file will be created or overwritten with the estimated Pareto solutions to the problem.
+A standard ASCII-based CSV format with white space as a seperator is chosen for the output.
+The first columns describe the objective values followed by the parameter values of the respective configuration.
+The first two lines contain comments which describe the count of objectives and parameters.
+
 
 ## Additional Information
 - [Authors](AUTHORS.md)
